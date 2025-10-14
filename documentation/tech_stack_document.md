@@ -1,90 +1,130 @@
-# Tech Stack Document
+# Tech Stack Document for Hotel Room Booking Application
 
-This document explains the key technologies chosen for the **codeguide-starter** project. It’s written in everyday language so anyone—technical or not—can understand why each tool was picked and how it supports the application.
+This document explains, in everyday language, the reasons behind each technology chosen for the hotel room booking project. It’s designed so that anyone—technical or not—can understand how everything fits together and why these tools were selected.
 
 ## 1. Frontend Technologies
-The frontend is everything the user sees and interacts with. For this project, we’ve used:
 
-- **Next.js (App Router)**
-  - A React framework that makes page routing, server-side rendering, and API routes very simple.
-  - Enhances user experience by pre-rendering pages on the server or at build time, leading to faster initial load.
-- **React 18**
-  - The underlying library for building user interfaces with reusable components.
-  - Provides a smooth, interactive experience thanks to its virtual DOM and modern hooks.
-- **TypeScript**
-  - A superset of JavaScript that adds types (labels for data).
-  - Helps catch errors early during development and makes the code easier to maintain.
-- **CSS (globals.css & theme.css)**
-  - **globals.css** applies base styles (fonts, colors, resets) across the entire app.
-  - **dashboard/theme.css** defines the look and feel specific to the dashboard area.
-  - This separation keeps styles organized and avoids accidental style conflicts.
+These are the tools we use to build what you see and interact with in your browser.
 
-By combining these tools, we have a clear structure (Next.js folders for pages and layouts), safer code (TypeScript), and flexible styling with vanilla CSS.
+- Next.js (App Router)
+  • A framework that handles both page routing (how you navigate) and server-powered data fetching. It helps pages load quickly and ensures search engines can find your content easily.
+
+- React & React Hooks (`useState`, `useEffect`)
+  • React is the library for building user interfaces. Hooks are simple functions that let components remember things (like form inputs) and react to changes (such as data loading).
+
+- TypeScript
+  • A version of JavaScript that adds clear labels to data (types). This helps developers catch mistakes early, making the app more reliable.
+
+- shadcn/ui Components
+  • A pre-built set of buttons, forms, tables, and other building blocks. They look good, work well on all devices, and save development time.
+
+- Tailwind CSS
+  • A styling toolkit made of small utility classes (like `bg-blue-500` or `text-center`). It lets us design layouts and colors quickly without writing custom CSS from scratch.
+
+- Dark Mode Support
+  • Built-in toggle between light and dark themes for better comfort and accessibility.
+
+How these choices enhance the user experience:
+- Faster page loads and SEO-friendly content with Next.js Server Components.
+- Consistent, responsive design using shadcn/ui and Tailwind.
+- Fewer bugs and clearer code thanks to TypeScript.
 
 ## 2. Backend Technologies
-The backend handles data, user accounts, and the logic behind the scenes. Our choices here are:
 
-- **Next.js API Routes**
-  - Allows us to write server-side code (`route.ts` files) alongside our frontend in the same project.
-  - Runs on Node.js, so we can handle requests like sign-up, sign-in, and data fetching in one place.
-- **Node.js Runtime**
-  - The JavaScript environment on the server that executes our API routes.
-- **bcrypt** (npm package)
-  - A library for hashing passwords securely before storing them.
-  - Ensures that even if someone got access to our data, raw passwords aren’t visible.
-- **(Optional) NextAuth.js or JWT**
-  - While this starter kit shows a custom authentication flow, it can easily integrate services like NextAuth.js for email-based login or JWT (JSON Web Tokens) for stateless sessions.
+These power everything that happens behind the scenes—storing data, running business logic, and securing access.
 
-These components work together to receive user credentials, verify or store them securely, manage sessions or tokens, and deliver protected data back to the frontend.
+- Next.js API Routes
+  • Server endpoints living alongside the pages. They handle requests like creating a room or booking a reservation.
+
+- Better Auth (Authentication Library)
+  • Manages sign-up, sign-in, and session tracking. It also lets us assign special permissions (an `isAdmin` flag) so only administrators can register or manage rooms.
+
+- PostgreSQL Database
+  • A robust system for storing structured information: users, rooms, bookings, and their relationships.
+
+- Drizzle ORM
+  • A tool that connects TypeScript code to PostgreSQL. It ensures safe, type-checked database queries, reducing runtime errors when reading or writing data.
+
+- Zod (Data Validation Library)
+  • Checks that incoming data (for example, a new room’s price or booking dates) follow the correct format and rules before saving to the database.
+
+How these components work together:
+1. A user submits a form in the browser.
+2. Next.js API route receives the data and runs Zod to confirm it’s valid.
+3. Better Auth checks if the user is logged in (and an admin, if required).
+4. Drizzle talks to PostgreSQL to read or write the data.
+5. The API responds, and the frontend updates accordingly.
 
 ## 3. Infrastructure and Deployment
-Infrastructure covers where and how we host the app, as well as how changes get delivered:
 
-- **Git & GitHub**
-  - Version control system (Git) and remote hosting (GitHub) keep track of all code changes and allow team collaboration.
-- **Vercel (or Netlify)**
-  - A popular hosting service optimized for Next.js, with one-click deployments and global content delivery.
-  - Automatically rebuilds and deploys the site whenever code is pushed to the main branch.
-- **GitHub Actions (CI/CD)**
-  - Automates tasks like linting (ESLint), formatting (Prettier), and running any tests you add.
-  - Ensures that only clean, tested code goes live.
+This section covers where the code lives, how it’s built, and how it goes live.
 
-Together, these tools provide a reliable, scalable setup where every code change is tested and deployed quickly, with minimal manual work.
+- Git & GitHub (Version Control)
+  • Tracks every change in the code, enabling collaboration and safe updates.
+
+- Docker & Docker Compose
+  • Encapsulates the application and database in containers. This ensures that everyone on the team—regardless of their local machine setup—runs the same environment.
+
+- CI/CD Pipeline (e.g., GitHub Actions)
+  • Automatically runs tests, builds the code, and deploys it when changes are merged. This reduces human error and speeds up releases.
+
+- Hosting Platform (e.g., Vercel)
+  • A cloud service optimized for Next.js apps. It handles serverless functions (API routes), static assets, and scaling automatically.
+
+How these decisions help:
+- Consistent development setup with Docker.
+- Safe, automated deployments with CI/CD.
+- Reliable performance and infinite scaling with a managed host.
 
 ## 4. Third-Party Integrations
-While this starter kit is minimal by design, it already includes or can easily add:
 
-- **bcrypt**
-  - For secure password hashing (included as an npm dependency).
-- **NextAuth.js** (optional)
-  - A full-featured authentication library supporting email/password, OAuth, and more.
-- **Sentry or LogRocket** (optional)
-  - For real-time error tracking and performance monitoring in production.
+We connect with outside services to add functionality without reinventing the wheel.
 
-These integrations help extend the app’s capabilities without building every feature from scratch.
+- Better Auth (Authentication Service)
+  • Securely manages user accounts, passwords, and sessions.
+
+- (Optional) Analytics Tools (e.g., Google Analytics)
+  • Track visitor behaviors, page views, and conversions to help improve the service.
+
+- (Optional) Email Service (e.g., SendGrid)
+  • Send confirmation emails when a user signs up or booking is confirmed.
+
+Why we use them:
+- Offload complex, security-sensitive tasks (like login and email) to specialized providers.
+- Focus on core features—room registration and availability—rather than building every service from scratch.
 
 ## 5. Security and Performance Considerations
-We’ve baked in several measures to keep users safe and the app running smoothly:
 
-Security:
-- Passwords are never stored in plain text—bcrypt hashes them with a random salt.
-- API routes can implement CSRF protection and input validation to block malicious requests.
-- Session tokens or cookies are marked secure and HttpOnly to prevent theft via JavaScript.
+We’ve put in place measures to keep data safe and ensure the app runs smoothly.
 
-Performance:
-- Server-side rendering (SSR) and static site generation (SSG) in Next.js deliver pages faster.
-- Code splitting and lazy-loaded components ensure users only download what they need.
-- Global CSS and theme files are small and cached by the browser for quick repeat visits.
+Security Measures:
+- Role-Based Access Control (RBAC)
+  • The `isAdmin` flag prevents unauthorized users from altering rooms or bookings.
 
-These strategies work together to give users a fast, secure experience every time.
+- Environment Variables (`.env` files)
+  • Store secrets like database passwords and API keys outside of the code.
+
+- Input Validation with Zod
+  • Guards against bad or malicious data reaching the database.
+
+Performance Optimizations:
+- Server Components in Next.js
+  • Fetch and render data on the server to reduce browser work and speed up page loads.
+
+- Caching Strategies
+  • Leverage built-in Next.js caching to avoid repeated database queries for static or infrequently changing data.
+
+- Database Indexing
+  • Add indexes on crucial columns (e.g., `roomId`, `checkInDate`) so queries like “find empty rooms” run quickly.
 
 ## 6. Conclusion and Overall Tech Stack Summary
-In building **codeguide-starter**, we chose technologies that:
 
-- Align with modern web standards (Next.js, React, TypeScript).
-- Provide a clear, file-based project structure for rapid onboarding.
-- Offer built-in support for server-side rendering, API routes, and static assets.
-- Emphasize security through password hashing, session management, and safe defaults.
-- Enable easy scaling and future enhancements via modular code and optional integrations.
+Recap of our key choices and how they support project goals:
 
-This stack strikes a balance between simplicity for newcomers and flexibility for experienced teams. It accelerates development of a secure authentication flow and a polished dashboard, while leaving room to plug in databases, test suites, and advanced features as the project grows.
+- Frontend: Next.js, React, TypeScript, shadcn/ui, Tailwind CSS for a fast, accessible, and attractive interface.
+- Backend: Next.js API routes, Better Auth, PostgreSQL with Drizzle ORM, and Zod for secure, type-safe data handling.
+- Infrastructure: Git/GitHub, Docker, CI/CD pipelines, and a managed hosting platform for reliable development and deployment.
+- Integrations: Specialized services for authentication, email, and analytics to streamline non-core features.
+- Security & Performance: RBAC, environment variables, server-side rendering, caching, and indexing.
+
+These technologies were chosen to create a scalable, maintainable, and secure hotel room booking application. They allow the team to focus on business logic—registering rooms, monitoring availability, and processing bookings—while relying on proven tools for the rest.
