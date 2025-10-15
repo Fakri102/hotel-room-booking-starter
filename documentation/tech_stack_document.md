@@ -1,4 +1,4 @@
-# Tech Stack Document
+# Tech Stack Document for Hotel Room Booking Application
 
 # Tech Stack Document for Hotel Room Booking Application
 

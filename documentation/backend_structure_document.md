@@ -165,7 +165,12 @@ create index idx_bookings_room_dates on bookings(room_id, check_in_date, check_o
   - Regular Drizzle migrations applied via CI/CD.
   - Periodic dependency updates and security patching.
 
-## 9. Conclusion and Overall Backend Summary
+- **Unified Codebase**: Next.js App Router integrates UI and API for smoother development.
+- **Type Safety**: TypeScript + Drizzle ORM catch errors early.
+- **Modular APIs**: Clear, RESTful endpoints with role-based protection.
+- **Robust Hosting**: Vercel for serverless functions and AWS RDS for managed PostgreSQL.
+- **Strong Security**: End-to-end encryption, input validation, and role checks.
+- **Monitoring & Maintenance**: Built-in analytics, logging, and automated backups keep the system healthy.
 
 This backend structure combines modern frameworks and cloud services to deliver a reliable, scalable, and secure foundation for your hotel booking application. Key strengths include:
 
