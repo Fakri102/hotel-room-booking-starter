@@ -52,7 +52,7 @@
     "description": "Build a dashboard component to display all rooms and their current availability status",
     "details": "Develop components/RoomStatusDashboard.tsx using shadcn/ui Table or Card components to display room information. Fetch room data from /api/rooms endpoint and show room details including number, type, capacity, price, and current availability status. Include an 'Add Room' button that opens the RoomRegistrationForm dialog. Implement proper loading states, error handling, and data refresh functionality. Integrate this component into app/dashboard/page.tsx. Add visual indicators (badges, colors) to clearly distinguish between available and occupied rooms.",
     "status": "completed",
-    "test_strategy": "Write component tests to verify data fetching, loading states, and error handling. Test that the Add Room button properly opens the registration form modal. Verify that room status indicators display correctly based on availability data. Test component integration within the dashboard page.",
+    "test_strategy": "Write a component tests to verify data fetching, loading states, and error handling. Test that the Add Room button properly opens the registration form modal. Verify that room status indicators display correctly based on availability data. Test component integration within the dashboard page.",
     "priority": "medium",
     "ordinal": 3,
     "task_group_id": "402d5fb7-964b-498c-a18e-1c9c67856455",
