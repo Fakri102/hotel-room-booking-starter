@@ -8,7 +8,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -52,19 +51,13 @@ export default function SignUpPage() {
         setError("");
 
         try {
-            const result = await signUp.email({
-                email: data.email,
-                password: data.password,
-                name: data.name,
-            });
+            const result = await signUp(data.email, data.password, data.name);
 
-            if (result.error) {
-                setError(result.error.message || "Sign up failed");
-            } else {
+            if (result) {
                 router.push("/dashboard");
             }
-        } catch (err) {
-            setError("An unexpected error occurred");
+        } catch {
+            setError("Failed to create account");
         } finally {
             setIsLoading(false);
         }

@@ -24,18 +24,13 @@ export default function SignInPage() {
         setError("");
 
         try {
-            const result = await signIn.email({
-                email,
-                password,
-            });
+            const result = await signIn(email, password);
 
-            if (result.error) {
-                setError(result.error.message || "Sign in failed");
-            } else {
+            if (result) {
                 router.push("/dashboard");
             }
-        } catch (err) {
-            setError("An unexpected error occurred");
+        } catch {
+            setError("Invalid email or password");
         } finally {
             setIsLoading(false);
         }
