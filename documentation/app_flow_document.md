@@ -1,5 +1,7 @@
 # App Flow Document for Hotel Room Booking Application
 
+# App Flow Document for Hotel Room Booking Application
+
 ## Onboarding and Sign-In/Sign-Up
 A brand-new visitor lands on the application by opening the public URL in their browser. They first see a simple landing page that features a list of available rooms with a date selector and a prompt to either sign in or sign up. When the visitor clicks the sign-up link, they are taken to a form where they enter their name, email address, and password. Upon submitting the account creation form, the application validates the input and then stores the new user record in the database. If the visitor already has an account, they can click the sign-in link to enter their email and password; after a successful login, they are redirected to their personal dashboard. If the user forgets their password, a “Forgot Password” link takes them to a reset page where they enter their email. The system sends a reset link via email that brings them back to a secure form where they can choose a new password. On signing out, the session is invalidated and the user returns to the landing page.
 
@@ -21,3 +23,13 @@ If a form is submitted with missing or invalid data, inline validation errors ap
 
 ## Conclusion and Overall App Journey
 A first-time visitor arrives at the landing page and explores available rooms. They sign up with their email and password, verify their account, and sign in. After login, regular users browse rooms by date, complete bookings, and view or cancel those bookings in their dashboard. Administrators follow a parallel path: they sign in, access the protected dashboard, register new rooms via a form, edit or remove rooms, and monitor occupancy through an availability view. Throughout everyday usage, both user types manage their settings from the profile page, recover forgotten passwords if needed, and rely on clear messages when errors occur. This flow ensures a seamless experience from account creation to the core goals of room registration, empty room monitoring, and booking management.
+
+---
+**Document Details**
+- **Project ID**: 92f98f0b-12b5-4786-bc48-10fca2a1f253
+- **Document ID**: caadb2d8-43b9-4380-92a3-510702b98024
+- **Type**: custom
+- **Custom Type**: app_flow_document
+- **Status**: completed
+- **Generated On**: 2025-10-14T10:50:02.900Z
+- **Last Updated**: N/A

@@ -1,3 +1,5 @@
+# Frontend Guidelines Document
+
 # Frontend Guideline Document
 
 This document outlines the frontend architecture, design principles, and technologies used in the hotel-room-booking application. It’s written in everyday language so that anyone—from designers to new developers—can understand how our frontend is organized and how to work with it.
@@ -97,3 +99,13 @@ Unique aspects of our setup:
 - **Tailwind CSS** theming with dark mode out of the box.
 
 Together, these guidelines form the foundation for building and extending your hotel room booking application with confidence and clarity.
+
+---
+**Document Details**
+- **Project ID**: 92f98f0b-12b5-4786-bc48-10fca2a1f253
+- **Document ID**: a6aa8bca-2cce-42ca-b010-3dec3d1f5740
+- **Type**: custom
+- **Custom Type**: frontend_guidelines_document
+- **Status**: completed
+- **Generated On**: 2025-10-14T10:51:10.482Z
+- **Last Updated**: N/A

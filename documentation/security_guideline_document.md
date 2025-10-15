@@ -1,3 +1,5 @@
+# Security Guideline Document
+
 # Security Guidelines for `hotel-room-booking-starter`
 
 This document outlines mandatory security best practices tailored to the `hotel-room-booking-starter` repository. Adhere to these guidelines to ensure your hotel room registration and availability-monitoring application is secure, resilient, and maintainable.
@@ -133,3 +135,13 @@ This document outlines mandatory security best practices tailored to the `hotel-
 ---
 
 By integrating these security controls throughout your development lifecycle, you will ensure the `hotel-room-booking-starter` application remains robust against common threats and aligns with industry best practices. Always conduct periodic security reviews and update controls as new threats emerge.
+
+---
+**Document Details**
+- **Project ID**: 92f98f0b-12b5-4786-bc48-10fca2a1f253
+- **Document ID**: 81691679-4c2d-4fbb-be46-cef86fb184ae
+- **Type**: custom
+- **Custom Type**: security_guideline_document
+- **Status**: completed
+- **Generated On**: 2025-10-14T10:50:34.677Z
+- **Last Updated**: N/A

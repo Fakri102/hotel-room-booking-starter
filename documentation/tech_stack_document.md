@@ -1,5 +1,7 @@
 # Tech Stack Document for Hotel Room Booking Application
 
+# Tech Stack Document for Hotel Room Booking Application
+
 This document explains, in everyday language, the reasons behind each technology chosen for the hotel room booking project. It’s designed so that anyone—technical or not—can understand how everything fits together and why these tools were selected.
 
 ## 1. Frontend Technologies
@@ -128,3 +130,13 @@ Recap of our key choices and how they support project goals:
 - Security & Performance: RBAC, environment variables, server-side rendering, caching, and indexing.
 
 These technologies were chosen to create a scalable, maintainable, and secure hotel room booking application. They allow the team to focus on business logic—registering rooms, monitoring availability, and processing bookings—while relying on proven tools for the rest.
+
+---
+**Document Details**
+- **Project ID**: 92f98f0b-12b5-4786-bc48-10fca2a1f253
+- **Document ID**: 4913ddec-7a84-4e81-9c5c-224bab4d8d6c
+- **Type**: custom
+- **Custom Type**: tech_stack_document
+- **Status**: completed
+- **Generated On**: 2025-10-14T10:50:49.772Z
+- **Last Updated**: N/A

@@ -1,3 +1,5 @@
+# Project Requirements Document
+
 # Project Requirements Document: Hotel Room Booking Application
 
 ## 1. Project Overview
@@ -86,3 +88,13 @@ We’re building this app to streamline room inventory management and minimize d
 ---
 
 This document captures the full scope of v1 requirements, user journeys, major technical decisions, and potential challenges. It should serve as the single source of truth for all subsequent design and implementation artifacts.
+
+---
+**Document Details**
+- **Project ID**: 92f98f0b-12b5-4786-bc48-10fca2a1f253
+- **Document ID**: 8142e7b5-01b5-4b09-a8ff-3abacc69bc46
+- **Type**: custom
+- **Custom Type**: project_requirements_document
+- **Status**: completed
+- **Generated On**: 2025-10-14T10:49:20.904Z
+- **Last Updated**: N/A
